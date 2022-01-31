@@ -1,6 +1,6 @@
 #!/usr/bin/env nextflow
 
-params.geeting = 'Hello world!'
+params.greeting = 'Hello world!'
 greeting_ch = Channel.from(params.greeting)
 
 process splitletters {
@@ -14,3 +14,5 @@ process splitletters {
 	printf '$x' | split -b 6 - chunk_
 	"""
 }
+
+letters.view()
